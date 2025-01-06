@@ -1,12 +1,15 @@
 # spotify-throwback-random
 
-A Spotify web app that helps you rediscover your music by randomly playing songs from your liked tracks and recently played history.
+A Spotify web app that helps you rediscover your music by randomly playing songs from your liked tracks, excluding recently played ones.
+
+🎵 **Try it here:** [https://danielwolfman.github.io/spotify-throwback-random/](https://danielwolfman.github.io/spotify-throwback-random/)
 
 ## Features
 
 - 🎵 Browse your liked songs
-- 🕒 View recently played tracks
+- 🕒 Exclude recently played tracks
 - 🎲 Add random songs to your queue
+- 🎚️ Choose how many songs to add (1-20)
 - 🔄 Automatic playback management
 - 🔐 Secure Spotify authentication
 
@@ -29,10 +32,10 @@ cd spotify-throwback-random
 npm install
 ```
 
-3. Create a `.env` file in the project root:
+3. Create a `.env.local` file based on `.env.example`:
 ```env
 VITE_SPOTIFY_CLIENT_ID=your_spotify_client_id
-VITE_SPOTIFY_REDIRECT_URI=http://localhost:5173/callback
+VITE_SPOTIFY_REDIRECT_URI=http://localhost:3000/spotify-throwback-random/callback
 ```
 
 4. Start the development server:
@@ -40,18 +43,12 @@ VITE_SPOTIFY_REDIRECT_URI=http://localhost:5173/callback
 npm run dev
 ```
 
-## Usage
-
-1. Log in with your Spotify account
-2. Ensure you have an active Spotify player (desktop app, web player, or mobile)
-3. Browse your music library
-4. Click "Random" to add a random song to your queue
-
 ## Development
 
 - Built with React + TypeScript
 - Uses Vite for fast development
 - Integrates with Spotify Web API
+- GitHub Actions for automated deployment
 
 ## Required Spotify Permissions
 
@@ -64,6 +61,14 @@ npm run dev
 - user-read-currently-playing
 - streaming
 - app-remote-control
+
+## Deployment
+
+The app is automatically deployed to GitHub Pages using GitHub Actions. To deploy:
+
+1. Add your `SPOTIFY_CLIENT_ID` to your repository secrets
+2. Push to the main branch
+3. GitHub Actions will handle the build and deployment
 
 ## License
 
